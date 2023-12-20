@@ -1,13 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+  <!-- head es una sección del documento que contiene metadatos y enlaces a recursos externos que no forman parte del contenido visible de la página. -->
 
-<head>
-  <meta charset="utf-8">
-  <title>Analizador de texto</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <title>Analizador de texto</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/jpg" href="/src/imgs/buscar (1).png" />
+  </head>
 
-<body>
-  <script src="index.js" type="module"></script>
-</body>
+  <!-- El body es el contenido principal de un documento -->
+
+  <body>
+    <header>
+      <h1>Analizador de Texto</h1>
+    </header>
+
+    <main>
+      <!-- label se utiliza específicamente para etiquetar elementos de formulario -->
+      <!-- <label for="story">Analizador de texto</label><br /> -->
+
+      <!-- Listado de acciones -->
+
+      <ul>
+        <li data-testid="word-count">
+          Palabras:
+          <p id="word"></p>
+        </li>
+        <li data-testid="character-count">
+          Caracteres:
+          <p id="characters"></p>
+        </li>
+        <li data-testid="character-no-spaces-count">
+          Caracteres sin espacios:
+          <p id="space"></p>
+        </li>
+        <li data-testid="number-count">
+          Números:
+          <p id="number"></p>
+        </li>
+        <li data-testid="number-sum">
+          Suma números:
+          <p id="sum"></p>
+        </li>
+        <li data-testid="word-length-average">
+          Longitud promedio:
+          <p id="length"></p>
+        </li>
+      </ul>
+
+      <!-- Textarea es utilizado para crear un área de texto editable. -->
+
+      <textarea
+        id="text"
+        name="user-input"
+        rows="6"
+        cols="60"
+        placeholder="ingresa tu texto"
+      ></textarea
+      ><br />
+
+      <!-- Botón de borrado de texto. -->
+
+      <button name="btn">Borrar</button>
+    </main>
+    <footer>
+      <h6>By Elisa Santibañez</h6>
+    </footer>
+
+    <script src="index.js" type="module"></script>
+  </body>
 </html>
