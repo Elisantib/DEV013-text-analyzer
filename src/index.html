@@ -6,7 +6,15 @@
     <meta charset="utf-8" />
     <title>Analizador de texto</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/jpg" href="/src/imgs/buscar (1).png" />
+    <link rel="icon" type="image/jpg" href="./imgs/buscar(1).png" />
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Lora&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <!-- El body es el contenido principal de un documento -->
@@ -21,51 +29,65 @@
       <!-- <label for="story">Analizador de texto</label><br /> -->
 
       <!-- Listado de acciones -->
-
-      <ul>
-        <li data-testid="word-count">
-          Palabras:
-          <p id="word"></p>
-        </li>
-        <li data-testid="character-count">
-          Caracteres:
-          <p id="characters"></p>
-        </li>
-        <li data-testid="character-no-spaces-count">
-          Caracteres sin espacios:
-          <p id="space"></p>
-        </li>
-        <li data-testid="number-count">
-          Números:
-          <p id="number"></p>
-        </li>
-        <li data-testid="number-sum">
-          Suma números:
-          <p id="sum"></p>
-        </li>
-        <li data-testid="word-length-average">
-          Longitud promedio:
-          <p id="length"></p>
-        </li>
-      </ul>
+      <div class="contenedor">
+        <ul>
+          <div>
+            <li class="li-style" data-testid="word-count">
+              Palabras:
+              <!-- Palabras:
+                <p id="word"></p> -->
+            </li>
+            <li class="li-style" data-testid="character-count">
+              Caracteres:
+              <!-- Caracteres:
+                <p id="characters"></p> -->
+            </li>
+            <li class="li-style" data-testid="character-no-spaces-count">
+              Caracteres sin espacios:
+              <!-- Caracteres sin espacios:
+                <p id="space"></p> -->
+            </li>
+          </div>
+          <div>
+            <li class="li-style" data-testid="number-count">
+              Números:
+              <!-- Números:
+                <p id="number"></p> -->
+            </li>
+            <li class="li-style" data-testid="number-sum">
+              Suma números:
+              <!-- Suma números:
+                <p id="sum"></p> -->
+            </li>
+            <li class="li-style" data-testid="word-length-average">
+              Longitud promedio:
+              <!-- Longitud promedio:
+                <p id="length"></p> -->
+            </li>
+          </div>
+        </ul>
+      </div>
 
       <!-- Textarea es utilizado para crear un área de texto editable. -->
 
       <textarea
-        id="text"
         name="user-input"
         rows="6"
         cols="60"
-        placeholder="ingresa tu texto"
+        placeholder="Ingresa tu texto aquí"
       ></textarea
       ><br />
 
       <!-- Botón de borrado de texto. -->
 
-      <button name="btn">Borrar</button>
+      <button class="btn" id="reset-button">
+        <div class="inner"></div>
+        <span>Limpiar</span>
+      </button>
+      <!-- <button id="reset-button">Limpiar</button> -->
     </main>
     <footer>
-      <h6>By Elisa Santibañez</h6>
+      <p>Por Elisa Santibañez</p>
     </footer>
 
     <script src="index.js" type="module"></script>

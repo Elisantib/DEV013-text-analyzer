@@ -23,6 +23,7 @@ const analyzer = {
     const onlyCharacter = text;
     const excluyendoEspacios = onlyCharacter.replace(/\s+/g, "");
     const arraySpace = excluyendoEspacios.split("");
+    /* console.log(arraySpace); */
 
     return arraySpace.length;
 
@@ -40,7 +41,16 @@ const analyzer = {
     //TODO: esta función debe retornar el recuento de caracteres excluyendo espacios y signos de puntuación que se encuentran en el parámetro `text` de tipo `string`.
   },
   getAverageWordLength: (text) => {
-    //
+    const wordLength = text;
+    const onlyWord2 = wordLength.split(/\s+/).length;
+    const onlyCharacter2 = wordLength.split("").length;
+
+    return onlyCharacter2 / onlyWord2;
+
+    //Guardar text en una constante para utilizarla
+    //seleccionar solo las palabras del texto
+    //Seleccionar solo los caracteres del texto
+    //dividir las dos anteriores para obtener la longitud promedio
     //TODO: esta función debe retornar la longitud media de palabras que se encuentran en el parámetro `text` de tipo `string`.
   },
   getNumberCount: (text) => {

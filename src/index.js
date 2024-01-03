@@ -3,33 +3,34 @@ import analyzer from "./analyzer.js";
 
 /* --------------BOTON DE BORRADO--------------- */
 
-document.getElementsByName("btn")[0].addEventListener("click", function () {
+document.getElementById("reset-button").addEventListener("click", function () {
   borrarTexto();
 });
 
 function borrarTexto() {
+  // Borra el contenido del campo de entrada del Textarea con name "user-input"
   document.getElementsByName("user-input")[0].value = "";
 
-  /* reiniciar palabras */
-  document.getElementById("word").innerHTML = "";
+  const listWord = document.querySelectorAll("li")[0];
+  listWord.textContent = "Palabras: 0";
 
-  /* reiniciar caracteres */
-  document.getElementById("characters").innerHTML = "";
+  const listCharacters = document.querySelectorAll("li")[1];
+  listCharacters.textContent = "Caracteres: 0";
 
-  /* reiniciar caracteres sin espacio */
-  document.getElementById("space").innerHTML = "";
+  const listCharacterCountExcludingSpaces = document.querySelectorAll("li")[2];
+  listCharacterCountExcludingSpaces.textContent = "Caracteres sin espacios: 0";
 
-  /* reiniciar numeros */
-  document.getElementById("number").innerHTML = "";
+  const listNumber = document.querySelectorAll("li")[3];
+  listNumber.textContent = "Números: 0";
 
-  /* reiniciar suma de numeros */
-  document.getElementById("sum").innerHTML = "";
+  const listNumberSum = document.querySelectorAll("li")[4];
+  listNumberSum.textContent = "Suma números: 0";
 
-  /* reiniciar longitud */
-  document.getElementById("length").innerHTML = "";
+  const listAverageWordLength = document.querySelectorAll("li")[5];
+  listAverageWordLength.textContent = "Longitud promedio: 0";
 }
 
-//---------------------------------------------------------------------------------------
+/* -------------------------- CONSTANTE QUE ALMACENA TEXTAREA -------------------------- */
 
 /* creo la constante "texto" para guardar el elemento de id "textarea"  */
 
@@ -38,46 +39,82 @@ const texto = document.querySelector("textarea");
 
 /* ------------------ CONTAR PALABRAS --------------------- */
 
-const resultCountWord = document.getElementById("word");
+const resultCountWord = document.querySelectorAll("li")[0];
 
 texto.addEventListener("input", function () {
-  resultCountWord.textContent = analyzer.getWordCount(texto.value);
+  const wordCount = analyzer.getWordCount(texto.value);
+  resultCountWord.textContent = "Palabras: " + wordCount;
 });
+
+/* const resultCountWord = document.getElementById("word");
+
 
 /* ------------------ CONTAR CARACTERES --------------------- */
 
-/* creo la constante "resultCountCharacters" para guardar el elemento de id "characters" */
+const resultCountCharacters = document.querySelectorAll("li")[1];
 
-const resultCountCharacters = document.getElementById("characters");
-
-/* En el siguiente codigo le decimos a la const texto que escuche el evento input que se dispara cuando el contenido del elemento cambia y luego de eso ejecute la función */
-/* En la función decimos que el resultado del contenido de la const resultCountCharacters debe ser el valor de la const texto que se encuentra en getCharacterCount  */
+/* const resultCountCharacters = document.getElementById("characters"); */
 
 texto.addEventListener("input", function () {
-  resultCountCharacters.textContent = analyzer.getCharacterCount(texto.value);
+  const countCharacters = analyzer.getCharacterCount(texto.value);
+  resultCountCharacters.textContent = "Caracteres: " + countCharacters;
+  /* resultCountCharacters.textContent = analyzer.getCharacterCount(texto.value); */
 });
 
 /*----------------------- CONTAR CARACTERES SIN ESPACIOS -----------------*/
 
-const resultCharacterCountExcludingSpaces = document.getElementById("space");
+const resultCharacterCountExcludingSpaces = document.querySelectorAll("li")[2];
+
+/* const resultCharacterCountExcludingSpaces = document.getElementById("space"); */
 
 texto.addEventListener("input", function () {
-  resultCharacterCountExcludingSpaces.textContent =
+  const characterCountExcludingSpaces =
     analyzer.getCharacterCountExcludingSpaces(texto.value);
+  resultCharacterCountExcludingSpaces.textContent =
+    "Caracteres sin espacios: " + characterCountExcludingSpaces;
+
+  /* resultCharacterCountExcludingSpaces.textContent =
+    analyzer.getCharacterCountExcludingSpaces(texto.value); */
 });
 
 /* -------------------- CONTAR NUMEROS ----------------------------- */
 
-const resultNumerCount = document.getElementById("number");
+const resultNumerCount = document.querySelectorAll("li")[3];
+
+/* const resultNumerCount = document.getElementById("number"); */
 
 texto.addEventListener("input", function () {
-  resultNumerCount.textContent = analyzer.getNumberCount(texto.value);
+  const numberCount = analyzer.getNumberCount(texto.value);
+  resultNumerCount.textContent = "Números: " + numberCount;
+
+  /* resultNumerCount.textContent = analyzer.getNumberCount(texto.value); */
 });
 
 /* -------------------- SUMAR NUMEROS ----------------------------- */
 
-const resultNumberSum = document.getElementById("sum");
+const resultNumberSum = document.querySelectorAll("li")[4];
+
+/* const resultNumberSum = document.getElementById("sum"); */
 
 texto.addEventListener("input", function () {
-  resultNumberSum.textContent = analyzer.getNumberSum(texto.value);
+  const numberSum = analyzer.getNumberSum(texto.value);
+  resultNumberSum.textContent = "Suma números: " + numberSum;
+
+  /* resultNumberSum.textContent = analyzer.getNumberSum(texto.value); */
+});
+
+/* -------------------- LONGITUD PROMEDIO -------------------------*/
+
+const resultAverageWordLength = document.querySelectorAll("li")[5];
+
+/* const resultAverageWordLength = document.getElementById("length"); */
+
+texto.addEventListener("input", function () {
+  const averageWordLength = analyzer.getAverageWordLength(texto.value);
+  resultAverageWordLength.textContent =
+    "Longitud promedio: " + averageWordLength;
+
+  /* resultAverageWordLength.textContent = analyzer.getAverageWordLength(
+    texto.value
+  ); */
 });
