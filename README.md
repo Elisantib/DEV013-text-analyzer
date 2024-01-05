@@ -7,6 +7,7 @@
 * [3. Resumen del proyecto](#3-resumen-del-proyecto)
 * [4. Funcionalidades](#4-funcionalidades)
 * [5. Prototipo de baja fidelidad](#5-Prototipo-de-baja-fidelidad)
+* [6. Producto Final](#6-Producto-Final)
 
 ### 1. Consideraciones Generales
 
@@ -56,3 +57,7 @@ El listado de funcionalidades es el siguiente:
 ### 5. Prototipo de baja fidelidad
 
 ![Analizador de texto - prototipo](https://github.com/Laboratoria/DEV013-text-analyzer/assets/142262726/a7b5889d-c0ab-44ac-9c3d-c4d78c1fff74)
+
+### 6. Producto Final
+
+![producto final - P1(Labo)](https://github.com/Laboratoria/DEV013-text-analyzer/assets/142262726/f53b8e22-3dfd-4b84-8e39-abed37ef7096)
