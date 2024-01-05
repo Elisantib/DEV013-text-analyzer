@@ -3,7 +3,7 @@
 ## Índice
 
 * [1. Consideraciones Generales](#1-consideraciones-generales)
-* [2. Preambulo](#2-preámbulo)
+* [2. Preambulo](#2-preambulo)
 * [3. Resumen del proyecto](#3-resumen-del-proyecto)
 * [4. Funcionalidades](#4-funcionalidades)
 * [5. Prototipo de baja fidelidad](#5-Prototipo-de-baja-fidelidad)
