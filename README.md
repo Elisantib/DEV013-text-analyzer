@@ -1,4 +1,4 @@
-# :tw-1f4bb: Proyecto Analizador de Texto :tw-1f4bb:
+# Proyecto Analizador de Texto
 
 ## Índice
 
