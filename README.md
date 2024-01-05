@@ -54,3 +54,5 @@ El listado de funcionalidades es el siguiente:
 ------------
 
 ### 5. Prototipo de baja fidelidad
+
+![Analizador de texto - prototipo](https://github.com/Laboratoria/DEV013-text-analyzer/assets/142262726/a7b5889d-c0ab-44ac-9c3d-c4d78c1fff74)
