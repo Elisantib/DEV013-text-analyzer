@@ -8,6 +8,7 @@
 * [4. Funcionalidades](#4-funcionalidades)
 * [5. Prototipo de baja fidelidad](#5-Prototipo-de-baja-fidelidad)
 * [6. Producto Final](#6-Producto-Final)
+* [7. Pruebas de criterios mínimos de aceptación](#7-Pruebas-de-criterios-mínimos-de-aceptación)
 
 ### 1. Consideraciones Generales
 
@@ -61,3 +62,13 @@ El listado de funcionalidades es el siguiente:
 ### 6. Producto Final
 
 ![producto final - P1(Labo)](https://github.com/Laboratoria/DEV013-text-analyzer/assets/142262726/f53b8e22-3dfd-4b84-8e39-abed37ef7096)
+
+### 7. Pruebas de criterios mínimos de aceptación
+
+![analyzer](https://github.com/Laboratoria/DEV013-text-analyzer/assets/142262726/d15e525f-c0ca-4398-8a8d-7a2d2f5ec587)
+![analyzer2](https://github.com/Laboratoria/DEV013-text-analyzer/assets/142262726/a5c3109a-f25e-4b78-b236-7645d940e2e0)
+![Captura de pantalla 2024-01-05 205713](https://github.com/Laboratoria/DEV013-text-analyzer/assets/142262726/fef53eb0-d96e-4df2-87d9-ae98ec338ece)
+![Captura de pantalla 2024-01-05 205726](https://github.com/Laboratoria/DEV013-text-analyzer/assets/142262726/abef3cd5-9da7-40e7-8065-c58ed7704de8)
+![Captura de pantalla 2024-01-05 205734](https://github.com/Laboratoria/DEV013-text-analyzer/assets/142262726/c060e4a9-d81b-4258-9c7e-66b1796450c8)
+![Captura de pantalla 2024-01-05 205820](https://github.com/Laboratoria/DEV013-text-analyzer/assets/142262726/5648d05c-8911-4e33-b802-ceb5cbd9048e)
+![Captura de pantalla 2024-01-05 205844](https://github.com/Laboratoria/DEV013-text-analyzer/assets/142262726/7f2032b0-703f-480c-8bec-cfebcc9b8391)
