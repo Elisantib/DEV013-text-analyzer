@@ -1,151 +1,70 @@
 const analyzer = {
   getWordCount: (text) => {
-    const word = text;
-    const arrayWord = word.split(/\s+/);
+    const word = text; //guardo en una constante el texto pasado como parametro
+    const arrayWord = word.split(/\s+/); // Con split divido el texto según la expresion regular que le entregué. Lo convierte en un array... La expresión regular "/\s+/" : significa "encuentra una o más ocurrencias de cualquier carácter de espacio en blanco"
 
-    return arrayWord.length;
-
-    //transformar a text en un array con split
-    //solo contabilizar las palabras con una expresion regular
-    //retornar resultado
+    return arrayWord.length; // se devuelve la longitud del array, que representa el número de palabras en el texto
   },
 
   getCharacterCount: (text) => {
-    const caracter = text;
-    const arrayCharacter = caracter.split("");
+    const caracter = text; //guardo en una constante el texto pasado como parametro
+    const arrayCharacter = caracter.split(""); //Se utiliza split para dividir el texto en un array de caracteres
 
-    return arrayCharacter.length;
-
-    //Transformar text a un array
-    //contar el largo del array resultante con length
+    return arrayCharacter.length; //Se devuelve la longitud del array
   },
   getCharacterCountExcludingSpaces: (text) => {
-    const onlyCharacter = text;
+    const onlyCharacter = text; //guardo en una constante el texto pasado como parametro
     const excluyendoEspacios = onlyCharacter
       .replace(/[^\w\s]|_/g, "")
-      .replace(/\s+/g, "");
-    const arraySpace = excluyendoEspacios.split("");
+      .replace(/\s+/g, ""); // Se utiliza replace para eliminar caracteres no alfanuméricos y guiones bajos
+    //La expresión regular [^\w\s]|_ busca cualquier carácter que no sea una letra, número o espacio en blanco, o un guion bajo, y lo reemplaza con una cadena vacía.
+    //Después de eliminar caracteres no deseados, se utiliza nuevamente replace con la E.R. /\s+/g para eliminar los espacios en blanco restantes
 
-    return arraySpace.length;
+    const arraySpace = excluyendoEspacios.split(""); //Se utiliza split para dividir la cadena resultante en un array de caracteres
 
-    //---------------------------
-
-    /* return text.replace(/\s+/g, "").length; */
-
-    //----------------------------
-
-    //guardar text en una constante
-    //de esa constante extraer solo los caracteres con una expresion regular
-    //luego transformar a un array
-    //retornar
-
-    //TODO: esta función debe retornar el recuento de caracteres excluyendo espacios y signos de puntuación que se encuentran en el parámetro `text` de tipo `string`.
+    return arraySpace.length; //Se devuelve la longitud del array
   },
   getAverageWordLength: (text) => {
-    const wordLength = text;
-    const words = wordLength.split(/\s+/);
-    const totalWordLength = words.reduce((acc, word) => acc + word.length, 0);
-    const averageWordLength = totalWordLength / words.length;
-    return averageWordLength;
+    const wordLength = text; //guardo en una constante el texto pasado como parametro
+    const words = wordLength.split(/\s+/); //Se utiliza el método split para dividir el texto en un array de palabras con la E.R. /\s+/ que se utiliza para dividir el texto en base a uno o más espacios en blanco
 
-    /* const wordLength = text;
-    const onlyWord2 = wordLength.split(/\s+/).length;
-    const onlyCharacter2 = wordLength.split("").length;
+    const totalWordLength = words.reduce((acc, word) => acc + word.length, 0); //Se utiliza el método reduce para sumar las longitudes de todas las palabras. la función de reducción toma dos parámetros: acc (acumulador) y word (la palabra actual del array). La función suma la longitud de la palabra (word.length) al acumulador (acc). "0" Es el valor inicial del acumulador. En este caso, se comienza con un acumulador de valor cero.
 
-    return onlyCharacter2 / onlyWord2; */
+    const averageWordLength = totalWordLength / words.length; //Se calcula la longitud promedio dividiendo la suma total por el número de palabras
 
-    //Guardar text en una constante para utilizarla
-    //seleccionar solo las palabras del texto
-    //Seleccionar solo los caracteres del texto
-    //dividir las dos anteriores para obtener la longitud promedio
-    //TODO: esta función debe retornar la longitud media de palabras que se encuentran en el parámetro `text` de tipo `string`.
+    return parseFloat(averageWordLength.toFixed(2)); //Se utiliza parseFloat y toFixed para redondear el resultado a dos decimales y convertirlo a un número de punto flotante
   },
   getNumberCount: (text) => {
-    const number = text;
-    const numbersArray = number.split(" ");
+    const number = text; //guardo en una constante el texto pasado como parametro
+    const onlyNumber = number.match(/\b\d+(\.\d+)?\b/g); //Se utiliza match con una E.R. para encontrar números en el texto. La E.R. \b\d+(\.\d+)?\b coincide con números enteros o decimales
 
-    const onlyNumber = numbersArray
-      .filter((valor) => /^\d+$/.test(String(valor)))
-      .map(Number);
-
-    console.log(onlyNumber);
-    return onlyNumber.length;
-
-    /* const number = text;
-    const onlyNumber = number.replace(/[^0-9]+/g, "");
-    const arrayNumber = onlyNumber.split("");
-
-    return arrayNumber.length; */
-
-    //guardar text en una constante
-    //solo seleccionar los numeros del texto
-    //convertir los numeros en un array y luego con sumar cuantos numeros habían en mi array
-    //El replace es reemplaza todos los caracteres que no son dígitos (0-9) con una cadena vacía ("").
+    return onlyNumber ? onlyNumber.length : 0; // Si onlyNumber tiene un valor (es decir, se encontraron números en el texto), devuelve la cantidad de números encontrados. Si onlyNumber es null (no se encontraron números), devuelve cero
   },
   getNumberSum: (text) => {
-    const numberSum = text;
-    const numbersSumArray = numberSum.match(/\b\d+(\.\d+)?\b/g);
+    const numberSum = text; //guardo en una constante el texto pasado como parametro
+    const numbersSumArray = numberSum.match(/\b\d+(\.\d+)?\b/g); //Se utiliza una expresión regular para encontrar números en 'numberSum' y almacena los resultados en 'numbersSumArray'.
 
     if (!numbersSumArray) {
+      //Verifica si 'numbersSumArray' es null o undefined. Si es así, retorna 0.
       return 0;
     }
 
-    const onlyNumberSum = numbersSumArray.map(Number);
+    let suma = 0; //Inicializa una variable 'suma' para acumular la suma de los números encontrados.
 
-    const suma = onlyNumberSum.reduce(
-      (acumulador, numero) => acumulador + numero,
-      0
-    );
+    // Inicia un bucle 'for' que recorre cada elemento en 'numbersSumArray'
+    for (let i = 0; i < numbersSumArray.length; i++) {
+      //Obtiene la cadena de número en la posición 'i' del array y la almacena en 'numStr'.
+      const numStr = numbersSumArray[i];
+      //Convierte la cadena 'numStr' a un número de punto flotante y almacena el resultado en 'num'.
+      const num = parseFloat(numStr);
 
-    return suma;
-
-    //---------------------------------------------
-
-    /* const numberSum = text;
-    const numbersSumArray = numberSum.split(" ");
-
-    const onlyNumberSum = numbersSumArray
-      .filter((valor) => /^\d+$/.test(String(valor)))
-      .map(Number);
-
-    const suma = onlyNumberSum.reduce(
-      (acumulador, numero) => acumulador + numero,
-      0
-    );
-
-    console.log(suma);
-    return suma; */
-
-    //----------------------------------------------
-
-    /* const numberSum = text;
-    const arraySumNumber = numberSum.split("");
-
-    let contador = 0;
-
-    const soloEnteros = [];
-
-    for (let i = 0; i < arraySumNumber.length; i++) {
-      const num = parseInt(arraySumNumber[i]);
+      //Verifica si 'num' es un número válido. Si es así, suma 'num' a 'suma'.
       if (!isNaN(num)) {
-        soloEnteros.push(num);
+        suma += num;
       }
     }
 
-    for (let i = 0; i < soloEnteros.length; i++) {
-      contador = contador + soloEnteros[i];
-    }
-
-    return contador; */
-
-    //--------------------------
-
-    //convertir texto en un array
-    //con for recorrer el array
-    //solo reconocer los numeros
-    //almacenar los numeros en una const
-    //sumar los numeros guardados
-    //TODO: esta función debe retornar la suma de todos los números que se encuentran en el parámetro `text` de tipo `string`.
+    return suma; //Retorna la suma acumulada de los números encontrados en 'text'.
   },
 };
 
