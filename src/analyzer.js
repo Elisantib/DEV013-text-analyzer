@@ -25,6 +25,8 @@ const analyzer = {
     return arraySpace.length; //Se devuelve la longitud del array
   },
   getAverageWordLength: (text) => {
+    //función que tengo que cambiar en rama-eli
+
     const wordLength = text; //guardo en una constante el texto pasado como parametro
     const words = wordLength.split(/\s+/); //Se utiliza el método split para dividir el texto en un array de palabras con la E.R. /\s+/ que se utiliza para dividir el texto en base a uno o más espacios en blanco
 
