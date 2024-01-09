@@ -27,14 +27,53 @@ const analyzer = {
   getAverageWordLength: (text) => {
     //función que tengo que cambiar en rama-eli
 
-    const wordLength = text; //guardo en una constante el texto pasado como parametro
-    const words = wordLength.split(/\s+/); //Se utiliza el método split para dividir el texto en un array de palabras con la E.R. /\s+/ que se utiliza para dividir el texto en base a uno o más espacios en blanco
+    const text1 = text;
+    const characterLength = text1.length;
 
-    const totalWordLength = words.reduce((acc, word) => acc + word.length, 0); //Se utiliza el método reduce para sumar las longitudes de todas las palabras. la función de reducción toma dos parámetros: acc (acumulador) y word (la palabra actual del array). La función suma la longitud de la palabra (word.length) al acumulador (acc). "0" Es el valor inicial del acumulador. En este caso, se comienza con un acumulador de valor cero.
+    const wordLength = text1.split(" ").length;
 
-    const averageWordLength = totalWordLength / words.length; //Se calcula la longitud promedio dividiendo la suma total por el número de palabras
+    let modifiedText = "";
 
-    return parseFloat(averageWordLength.toFixed(2)); //Se utiliza parseFloat y toFixed para redondear el resultado a dos decimales y convertirlo a un número de punto flotante
+    //en el siguiente ciclo estoy obteniendo solo los caracteres de la "a" a la "z"
+    for (let i = 0; i < characterLength; i++) {
+      const character = text1[i];
+
+      if (
+        (character >= "a" && character <= "z") ||
+        (character >= "A" && character <= "Z")
+      ) {
+        modifiedText += character;
+      }
+    }
+
+    //en el siguiente ciclo estoy guardando en un array la cadena anterior
+    const arrayCharacter2 = [];
+
+    for (let i = 0; i < characterLength; i++) {
+      arrayCharacter2[i] = modifiedText[i];
+    }
+
+    //en el siguiente ciclo estoy eliminando de mi array los undefined
+
+    const newArray = [];
+
+    for (let i = 0; i < characterLength; i++) {
+      const removeUndefined = arrayCharacter2[i];
+      if (removeUndefined !== undefined) {
+        newArray.push(removeUndefined);
+      }
+    }
+
+    const result = parseFloat((newArray.length / wordLength).toFixed(2));
+
+    return result;
+
+    /*  */
+
+    //obtener la cantidad de palabras
+    //obtener la cantidad de caracteres excluyendo espacios y signos de puntuacion
+    //dividar la cant de caracteres por la cantidad de palabras
+    //retornar el resultado con dos decimales
   },
   getNumberCount: (text) => {
     const number = text; //guardo en una constante el texto pasado como parametro
